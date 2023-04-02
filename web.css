@@ -1,0 +1,243 @@
+body{
+  background-color: #f8faed;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto',sans-serif;
+}
+
+
+header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-position: center;
+  background-size:cover;
+  background-image:linear-gradient(#000000,rgba(217, 217, 217, 0.7)),url(pexels-nataliya-vaitkevich-6214156.jpg);
+  }
+  
+  
+  .navBar{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 25px;
+    box-sizing: border-box;
+    width: 100%;
+    
+  }
+  
+
+  .leftSection{
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .leftSection img{
+    width: 300px;
+    height: 140px;
+  }
+  
+ 
+  .navBtns{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-right: 200PX;
+  }
+
+  .navBtns button{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color:#ffe342;
+    background-color: transparent;
+    height: 60px;
+    border: none;
+  }
+  .navBtns button:hover{
+    cursor: pointer;
+    color: #c29907;
+  }
+  
+  .accountSection{
+    display: flex;
+    gap: 2rem;
+  }
+
+  .accountSection button{
+    width: 125px;
+    height: 35px;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: #ffe342;
+    background-color: #253f4b;
+    border: solid 1px #253f4b;
+    border-radius: 50px;
+  }
+
+  .accountSection button:hover{
+    color: #173138;
+    background-color:#000000;
+    border-color: #000000;
+    box-shadow: 0px 0px 12px 4px rgb(59, 87, 87);
+  }
+
+  .title-section {
+    background-color: #f8faed;
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+  }
+  
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  
+  .search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30PX;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button[type="submit"] {
+    padding: 5px;
+    background-color: #000000;
+    color: rgb(202, 206, 67);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+
+
+  .middle-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;  
+    margin-bottom: 0px;
+    
+  }
+
+  .welcome-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .welcome-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #c7a900;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+
+  
+  .links-container {
+   
+    margin-top: 20px;
+    
+    margin-bottom: 20PX;
+  }
+  
+  .links-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .links-container li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #000000;
+    box-shadow: 0px 2px 4px rgba(14, 10, 10, 0.3);
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .links-container li:hover {
+    transform: translateX(10px);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+  
+  .links-container a {
+    color: #ffe342;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .links-container a:hover {
+    color: #fff;
+    background-color: #333;
+  }
+  
+  
+ 
+  
+  .bottom-section {
+    text-align: center;
+  }
+  
+  .bottom-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 10rem;
+  }
+  
+  .bottom-section button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background-color: #FFA500;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .bottom-section button:hover {
+    background-color: #ffe342;
+  }
+  
+ 
+
+  
