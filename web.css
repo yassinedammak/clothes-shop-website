@@ -238,6 +238,63 @@ header{
     background-color: #ffe342;
   }
   
- 
+  footer {
+    display: flex;
+    justify-content: space-between;
+    background: rgb(3,37,37);
+    background: linear-gradient(0deg, rgba(3,37,37,1) 0%, rgba(250,219,154,1) 100%);
+    color: #fff;
+    padding: 50px;
+    font-size: 18px;
+  }
+  
+  .subscription form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .subscription input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .subscription button {
+    padding: 10px;
+    background-color: #ffe342;
+    color: #253f4b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-nav li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .contact ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .contact li {
+    margin-bottom: 10px;
+  }
 
   
