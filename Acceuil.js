@@ -37,5 +37,5 @@ setInterval(() => {
   if (counter > 2) {
     counter = 0;
   }
-  carouselContainer.style.left = `-${counter * 100}%`;
+  carouselContainer.style.left = `-${counter * 100}%`
 }, 5000);
