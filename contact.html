@@ -13,7 +13,7 @@
             <img src="download.png" alt="logo">
         </div>
         <div id="center_elements">
-            <a href="Acceuil.html">Acceuil</a>
+            <a href="Acceuil.html">Home</a>
             <a href="contact.html">Contact</a>
             <a href="about.html">About Us</a>
         </div>
@@ -31,7 +31,17 @@
             <input type="email" id="email" name="email" required>
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
-            <input type="submit" value="Send">
+            <label for="problem-type">Type of Problem:</label>
+            <select id="problem-type" name="problem-type">
+                <option value="Technical">Technical</option>
+                <option value="Refund Request">Refund Request</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="checkbox" id="reset-checkbox" name="reset-checkbox" value="reset">
+            <div class="form-buttons">
+                <input type="submit" value="Send">
+                <input type="reset" value="Reset">
+            </div>
             <p class="success"></p>
             <p class="error"></p>
         </form>
