@@ -1,0 +1,155 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f1f1f1;
+}
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#logo_container img {
+    height: 40px;
+}
+
+#center_elements span,
+.right_elements span {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+#center_elements span a,
+.right_elements span a {
+    text-decoration: none;
+    color: #333;
+}
+
+#center_elements span a:hover,
+.right_elements span a:hover {
+    color: #ff8c00;
+}
+
+
+.login-page {
+	width: 360px;
+	padding: 8% 0 0;
+	margin: auto;
+}
+
+.form {
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input, .form button, .form select {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	border: 0;
+	margin: 0;
+	padding: 15px;
+	color: #000;
+	font-size: 14px;
+	border-radius: 5px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.form button {
+	text-transform: uppercase;
+	background: #4CAF50;
+	color: #FFF;
+	border-radius: 5px;
+	padding: 15px;
+	margin-top: 15px;
+	border: none;
+	cursor: pointer;
+}
+
+.form h2 {
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 15px;
+	font-size: 24px;
+	color: #000;
+	text-transform: uppercase;
+}
+
+.form p {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+	color: #000;
+	margin-top: 15px;
+}
+
+.form p a {
+	color: #4CAF50;
+	text-decoration: none;
+}
+
+.form select {
+	margin-bottom: 15px;
+}
+
+.form label {
+	font-family:'Courier New', Courier, monospace;
+}
+/* Footer styles */
+footer{
+    background:#000;
+    padding:30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align:center;
+    margin-top: 30px;
+    }
+    
+    footer .row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
+    }
+    
+    footer .row a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+    }
+    
+    footer .row a:hover{
+    color:#fff;
+    }
+    
+    footer .row ul{
+    width:100%;
+    }
+    
+    footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+    }
+    
+    footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
+    }
+    footer .row a img {
+        width: 50px;
+        padding: 10px; 
+      }
+      
+    
