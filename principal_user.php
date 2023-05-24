@@ -1,10 +1,9 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Acceuil.css">
+    <link rel="stylesheet" href="principal_user.css" media="screen"  />
     <title>Home</title>
 </head>
 <body>
@@ -18,10 +17,31 @@
             <span id="About"><a href="about.html">About Us</a></span>
         </div>
         <div class="right_elements">
-                        <span id="Login"><a href=".\login.php">Login</a></span>
-            <span id="Sign_up"> <a href=".\signup.php">Sign Up</a></span>
+                        <span id="Login"><a href=".\Acceuil.html">Logout</a></span>
+            
         </div>
     </nav>
+    <div id="content">
+ <!-- tester si l'utilisateur est connecté -->
+ <?php
+ session_start();
+ if(isset($_GET['deconnexion']))
+ { 
+ if($_GET['deconnexion']==true)
+ { 
+ session_unset();
+ header("location:login.php");
+ }
+ }
+ else if($_SESSION['username'] !== ""){
+ $user = $_SESSION['username'];
+ ?>
+ <div class="message">Bonjour <span class="username"><?php echo $user; ?></span>, vous êtes connecté(e).</div>
+ <?php
+}
+?>
+ 
+ </div>
     <div class="carousel">
         <div class="carousel-container">
           <div class="carousel-item">

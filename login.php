@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Clothes Store Login/Sign-Up</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="script.js"></script>
+	
 </head>
-
 <body>
 	<nav class="navbar">
         <div id="logo_container">
@@ -16,29 +16,29 @@
             <span id="About"><a href="about.html">About Us</a></span>
         </div>
         <div class="right_elements">
-                        <span id="Login"><a href=".\login.html">Login</a></span>
-            <span id="Sign_up"> <a href=".\signup.html">Sign Up</a></span>
+            <span id="Login"><a href=".\login.php">Login</a></span>
+            <span id="Sign_up"> <a href=".\signup.php">Sign Up</a></span>
         </div>
     </nav>
 	<div class="login-page">
 		<div class="form">
-			<form class="register-form">
-				<h2>Sign Up</h2>
-				<input type="text" placeholder="Name"/>
-				<input type="email" placeholder="Email"/>
-				<input type="password" placeholder="Password"/>
-				<input type="password" placeholder="Confirm Password"/>
-				<select>
-					<option value="" disabled selected>Gender</option>
-					<option value="male">Male</option>
-					<option value="female">Female</option>
-					<option value="other">Other</option>
-				</select>
-				<button>Sign Up</button>
-				<p class="message">Already registered? <a href=".\login.html">Log in</a></p>
+			<form class="login-form" action="verification.php" method="POST"> 
+				<h2>Log In</h2>
+                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required> 
+                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+
+				<button type="submit" id='submit' value='LOGIN'>Log In</button> 
+				<p class="message">Not registered? <a href=".\signup.html">Create an account</a></p>
+                <?php
+                if(isset($_GET['erreur'])){
+                $err = $_GET['erreur'];
+                if($err==1 || $err==2)
+                echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+                }
+                ?>
 			</form>
-        </div>    
-    </div>
+		</div>
+	</div>
 	<footer>
         <div >
             <div class="row">
@@ -49,21 +49,18 @@
             </div>
         </div>
   
-    
-        
         <div class="row">
-        <ul>
-        <li><a href="./contact.html">Contact us</a></li>
-        <li><a href="./PrivacyPolicy.html">Privacy Policy</a></li>
-        <li><a href="./termsandconditions.html">Terms & Conditions</a></li>
-        </ul>
+            <ul>
+                <li><a href="./contact.html">Contact us</a></li>
+                <li><a href="./PrivacyPolicy.html">Privacy Policy</a></li>
+                <li><a href="./termsandconditions.html">Terms & Conditions</a></li>
+            </ul>
         </div>
         
         <div class="row">
-        Copyright © 2023 - All rights reserved
+            &copy; 2023 - All rights reserved
         </div>
         
     </footer>
-	
-</body>  
-</html>      
+</body>
+</html>

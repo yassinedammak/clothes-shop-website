@@ -1,38 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Clothes Store Login/Sign-Up</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="script.js"></script>
-</head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="confirmation.css">
+  </head>
 <body>
-	<nav class="navbar">
+    <nav class="navbar">
         <div id="logo_container">
             <img src="download.png" alt="logo">
         </div>
         <div id="center_elements">
-            <span id="Acceuil"><a href="./Acceuil.html">Home</a></span>
-            <span id="Contact"><a href="./contact.html">Contact</a></span>
-            <span id="About"><a href="about.html">About Us</a></span>
+            <a href="Acceuil.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
         </div>
         <div class="right_elements">
-                        <span id="Login"><a href=".\login.html">Login</a></span>
-            <span id="Sign_up"> <a href=".\signup.html">Sign Up</a></span>
-        </div>
+            <span id="Login"><a href=".\login.php">Login</a></span>
+<span id="Sign_up"> <a href=".\signup.php">Sign Up</a></span>
+</div>
     </nav>
-	<div class="login-page">
-		<div class="form">
-		
-			<form class="login-form">
-				<h2>Log In</h2>
-				<input type="email" placeholder="Email"/>
-				<input type="password" placeholder="Password"/>
-				<button>Log In</button>
-				<p class="message">Not registered? <a href=".\signup.html">Create an account</a></p>
-			</form>
-		</div>
-	</div>
-	<footer>
+    <div class="success-message">
+      <i class="fas fa-check-circle"></i>
+      <h3>Sign up successful!</h3>
+      <p>Thank you for signing up. Start exploring our latest collection now.</p>
+    </div>
+    <footer>
         <div >
             <div class="row">
                 <a href="https://www.facebook.com" target="_blank"><img  src="facebook .png" alt="Facebook"></a>
@@ -57,5 +52,6 @@
         </div>
         
     </footer>
+    <script src="contact.js"></script>
 </body>
 </html>

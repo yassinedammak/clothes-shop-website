@@ -141,4 +141,18 @@ footer{
       #stop-button:hover {
         background-color: #ccc;
       }
+      #play-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #343030;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #fff;
+        margin-top: 10px; 
+      }
+      
+      #play-button:hover {
+        background-color: #ccc;
+      }
       
