@@ -1,16 +1,16 @@
 <?php
-// Database connection details
+
 $host = "localhost";
 $username = "root";
 $password = "";
 $database = "webproject";
 
-// Establish a connection to the database
+
 $conn = mysqli_connect($host, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-// Fetch products from the database
+
 $query = "SELECT * FROM products";
 $result = mysqli_query($conn, $query);
 
@@ -76,7 +76,7 @@ $result = mysqli_query($conn, $query);
       <div class="Products-container">
     <div class="OnSale_products">
     <?php
-            // Loop through each product and display as a component
+           
             while ($row = mysqli_fetch_assoc($result)) {
                 $name = $row['name'];
                 $image = $row['image'];
@@ -104,6 +104,7 @@ $result = mysqli_query($conn, $query);
                 <a class="insta" href="https://www.instagram.com" target="_blank"><img  src="instagram.png" alt="Instagram"></a>
                 <a class="ytb" href="https://www.youtube.com" target="_blank"><img  src="youtube.png" alt="YouTube"></a>
                 <a class="twt" href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
+                <span id="admin"><a href="admin.html">login admin</a></span>
             </div>
         </div>
   
@@ -128,6 +129,6 @@ $result = mysqli_query($conn, $query);
 </body>
 </html>
 <?php
-// Close the database connection
+
 mysqli_close($conn);
 ?>

@@ -2,29 +2,29 @@
 
 session_start();
 
-// Database connection details
+
 $host = "localhost";
 $username = "root";
 $password = "";
 $database = "webproject";
 
-// Establish a connection to the database
+
 $conn = mysqli_connect($host, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-// Fetch products from the database
+
 $query = "SELECT * FROM products";
 $result = mysqli_query($conn, $query);
 
 if(isset($_POST['add'])){
-  //print_r($_POST['productid']);
+ 
   if (isset($_SESSION['cart'])){
 
     $item_array_id = array_column($_SESSION['cart'],'productid');
 
-    //print_r($_SESSION['cart']);
-    //print_r($item_array_id);
+    
+    
     if(in_array($_POST['productid'], $item_array_id)) {
 
       echo "<script>alert('Product is already added to cart..!') </script>";
@@ -35,7 +35,7 @@ if(isset($_POST['add'])){
         'productid' => $_POST['productid'],
       );
       $_SESSION['cart'][$count] = $item_array;
-      //print_r($_SESSION['cart']);
+     
     }
 
   }else{
@@ -44,7 +44,7 @@ if(isset($_POST['add'])){
       'productid' => $_POST['productid'],
     );
 
-    //create cart session variable (chithot il id fiha)
+    
     $_SESSION['cart'][0] = $item_array;
     print_r($_SESSION['cart']);
   }
@@ -97,7 +97,7 @@ if(isset($_POST['add'])){
         </div>
     </nav>
     <div id="content">
- <!-- tester si l'utilisateur est connecté -->
+
  <?php
  
  if(isset($_GET['deconnexion']))
@@ -149,7 +149,7 @@ if(isset($_POST['add'])){
     <div class="OnSale_products">
     
     <?php
-            // Loop through each product and display as a component
+          
             while ($row = mysqli_fetch_assoc($result)) {
                 $id = $row['id'];
                 $name = $row['name'];

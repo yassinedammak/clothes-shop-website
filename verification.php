@@ -17,17 +17,17 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
         $reponse = $exec_requete->fetch();
         $count = $reponse[0];
         
-        if($count != 0) { // nom d'utilisateur et mot de passe correctes
+        if($count != 0) { 
             $_SESSION['username'] = $username;
             header('Location: principal_user.php');
         } else {
-            header('Location: login.php?erreur=1'); // utilisateur ou mot de passe incorrect
+            header('Location: login.php?erreur=1'); 
         }
     } else {
-        header('Location: login.php?erreur=2'); // utilisateur ou mot de passe vide
+        header('Location: login.php?erreur=2');
     }
 } else {
     header('Location: login.php');
 }
-$db = null; // fermer la connexion
+$db = null; 
 ?>
