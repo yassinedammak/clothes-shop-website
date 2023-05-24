@@ -29,18 +29,13 @@ $result = mysqli_query($conn, $query);
             <img src="download.png" alt="logo">
         </div>
         <div id="center_elements">
-            <span id="Acceuil"><a href="./Acceuil.html">Home</a></span>
+            <span id="Acceuil"><a href="./Acceuil.php">Home</a></span>
             <span id="Contact"><a href="./contact.html">Contact</a></span>
             <span id="About"><a href="about.html">About Us</a></span>
         </div>
         <div class="right_elements">
-          <span id="Cart">
-            <a href="./cart.html">
-              <img src="./cart-icon.webp" alt="Cart">
-            </a>
-          </span>
-          <span id="Login"><a href=".\login.html">Login</a></span>
-          <span id="Sign_up"> <a href=".\signup.html">Sign Up</a></span>
+          <span id="Login"><a href=".\login.php">Login</a></span>
+          <span id="Sign_up"> <a href=".\signup.php">Sign Up</a></span>
         </div>
     </nav>
     <div class="carousel">
@@ -63,9 +58,12 @@ $result = mysqli_query($conn, $query);
           <source src=".\687374__oldmansmusic__glimmer-of-hope-freesound-mix.wav" type="audio/wav">
         </audio>
         <button id="stop-button">Stop music</button>
+        <br>
+        <button id="play-button">Play music</button>
       </div>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script src="about.js"></script>
+      
       
       
       
