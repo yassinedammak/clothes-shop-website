@@ -1,3 +1,20 @@
+<?php
+// Database connection details
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "webproject";
+
+// Establish a connection to the database
+$conn = mysqli_connect($host, $username, $password, $database);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+// Fetch products from the database
+$query = "SELECT * FROM products";
+$result = mysqli_query($conn, $query);
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,12 +29,18 @@
             <img src="download.png" alt="logo">
         </div>
         <div id="center_elements">
-            <span id="Acceuil"><a href="./Acceuil.html">Home</a></span>
+            <span id="Acceuil"><a href="./Acceuil.php">Home</a></span>
             <span id="Contact"><a href="./contact.html">Contact</a></span>
             <span id="About"><a href="about.html">About Us</a></span>
         </div>
         <div class="right_elements">
-                        <span id="Login"><a href=".\Acceuil.html">Logout</a></span>
+        <div class="right_elements">
+          <span id="Cart">
+            <a href="./cart.html">
+              <img src="./cart-icon.webp" alt="Cart">
+            </a>
+          </span>
+                        <span id="Login"><a href=".\Acceuil.php">Logout</a></span>
             
         </div>
     </nav>
@@ -36,7 +59,7 @@
  else if($_SESSION['username'] !== ""){
  $user = $_SESSION['username'];
  ?>
- <div class="message">Bonjour <span class="username"><?php echo $user; ?></span>, vous êtes connecté(e).</div>
+ <div class="message">Welcome <span class="username"><?php echo $user; ?></span>, You are connected.</div>
  <?php
 }
 ?>
@@ -70,52 +93,30 @@
       
       
       
-    <div class="Products">
-        <div class="OnSale_products">
-            <div class="product_card"> 
-                <img src="chemise.jpg" alt="chemise">
-                <div class="info">
-                    <div class="name"> Chemise</div>
-                    <div class="price"> 120£</div>
-                </div>
-            </div>
-            <div class="product_card">
-                <img src="serwel.jpg" alt="serwel">
-                <div class="info">
-                    <div class="name"> pantalon</div>
-                    <div class="price"> 100£</div>
-                </div>
-            </div>
-            <div class="product_card"><img src="tshirt.jpg" alt="">
-                <div class="info">
-                    <div class="name"> T-shirt</div>
-                    <div class="price"> 50£</div>
-                </div>
-            </div>
-        </div>
-        <div class="Chassures">
-            <div class="product_card">
-                <img src="jkk.jpg" alt="serwel">
-                <div class="info">
-                    <div class="name"> Black Sneakers</div>
-                    <div class="price"> 220£</div>
-                </div>
-            </div>
-            <div class="product_card">
-                <a href="./Product.html"><img src="whitesneakers-2048px-4180.webp" alt="white sneackers"></a>
-                <div class="info">
-                    <div class="name"> White Sneakers</div>
-                    <div class="price"> 100£</div>
-                </div>
-            </div>
+      <div class="Products-container">
+    <div class="OnSale_products">
+    <?php
+            // Loop through each product and display as a component
+            while ($row = mysqli_fetch_assoc($result)) {
+                $name = $row['name'];
+                $image = $row['image'];
+                $price = $row['price'];
+                ?>
+
                 <div class="product_card">
-                    <img src="STEVEMADDEN_SHOES_POSESSION_BLACK-TAN_SIDE_grande.webp" alt="Black Tan shoes">
+                    <img src="<?php echo $image; ?>" alt="<?php echo $name; ?>">
                     <div class="info">
-                        <div class="name"> Black Tan Shoes</div>
-                        <div class="price"> 150£</div>
-                    </div></div>
-        </div>
+                        <div class="name"><?php echo $name; ?></div>
+                        <div class="price"><?php echo $price; ?></div>
+                        <button class="add_to_cart" data-name="<?php echo $name; ?>" data-price="<?php echo $price; ?>">Add to Cart</button>
+                    </div>
+                </div>
+
+                <?php
+            }
+            ?>
     </div>
+</div>
     <footer>
         <div >
             <div class="row">
