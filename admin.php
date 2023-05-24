@@ -102,7 +102,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php } ?>
         </table>
         <br>
-        <a href="logout.php">Logout</a>
+        <a href="acceuil.php">Logout</a>
     </div>
 </body>
 </html>
