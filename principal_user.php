@@ -57,6 +57,7 @@ if(isset($_POST['add'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="principal_user.css" media="screen"  />
+    <link rel="icon" href="logooo.png" >
     <title>User_Home</title>
 </head>
 <body>
@@ -173,13 +174,13 @@ if(isset($_POST['add'])){
             ?>
     </div>
 </div>
-    <footer>
+<footer>
         <div >
             <div class="row">
-                <a href="https://www.facebook.com" target="_blank"><img  src="facebook .png" alt="Facebook"></a>
-                <a href="https://www.instagram.com" target="_blank"><img  src="instagram (3).png" alt="Instagram"></a>
-                <a href="https://www.youtube.com" target="_blank"><img  src="youtub.png" alt="YouTube"></a>
-                <a href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
+                <a class="fb" href="https://www.facebook.com" target="_blank"><img  src="facebook.png" alt="Facebook"></a>
+                <a class="insta" href="https://www.instagram.com" target="_blank"><img  src="instagram.png" alt="Instagram"></a>
+                <a class="ytb" href="https://www.youtube.com" target="_blank"><img  src="youtube.png" alt="YouTube"></a>
+                <a class="twt" href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
             </div>
         </div>
   

@@ -19,7 +19,7 @@
         <div class="right_elements">
           
           <span id="Cart">
-            <a href="./cart.html">
+            <a href="./cart.php">
               <img src="./cart-icon.webp" alt="Cart">
               <?php
                 session_start();

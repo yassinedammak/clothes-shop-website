@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="black.css">
     <link rel="icon" href="logooo.png" >
+    <title>Black Sneakers</title>
 </head>
 <body>
     <nav class="navbar">
@@ -14,30 +14,29 @@
             <img src="download.png" alt="logo">
         </div>
         <div id="center_elements">
-            <a href="./Acceuil.php">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About Us</a>
+            <span id="Acceuil"><a href="./Acceuil.php">Home</a></span>
+            <span id="Contact"><a href="./contact.html">Contact</a></span>
+            <span id="About"><a href="about.html">About Us</a></span>
         </div>
         <div class="right_elements">
-            <span id="Login"><a href=".\login.php">Login</a></span>
-<span id="Sign_up"> <a href=".\signup.php">Sign Up</a></span>
+            <span id="Login"><a href=".\login.html">Login</a></span>
+<span id="Sign_up"> <a href=".\signup.html">Sign Up</a></span>
 </div>
     </nav>
-    <div class="contact-container">
-        <form class="contact-form" action="contact.php" method="POST">
-            <h2>Contact Us</h2>
-            <label for="n">Name:</label>
-            <input type="text" name="name" id="name" required>
-            <br>
-            <label for="e">Email:</label>
-            <input type="email" name="email" id="email" required>
-            <br>
-            <label for="m">Message:</label>
-            <textarea name="message" id="message" rows="4" required></textarea>
-            <button type="submit">envoyer</button> 
-            <input type="reset" value="reset">
-        </form>
+
+    <div class="product-container">
+        <div class="product-image">
+            <img src="jkk.jpg" alt="Product">
+        </div>
+        <div class="product-info">
+            <h1 class="name">Black sneakers</h1>
+            <p class="description">
+                Découvrez nos sneakers noires de qualité supérieure, l'option idéale pour les hommes en quête d'une chaussure à la fois élégante et durable. Conçues avec une attention minutieuse aux détails et fabriquées à partir de matériaux haut de gamme, nos sneakers noires offrent une finition exceptionnelle et un confort ultime. Leur coupe impeccable et leurs lignes modernes mettent en valeur le style masculin avec une touche de sophistication, tandis que leur coloris noir polyvalent s'adapte facilement à toutes les tenues, que ce soit pour une tenue décontractée ou pour une occasion plus habillée.</p>
+            <div class="price">$220</div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
     </div>
+
     <footer>
         <div >
             <div class="row">
@@ -63,6 +62,5 @@
         </div>
         
     </footer>
-  
 </body>
 </html>

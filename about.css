@@ -1,14 +1,18 @@
 .navbar {
+    position: fixed;
+  width: 100%;
+  z-index: 9999;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    padding: 10px;
+    padding: 3px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #logo_container img {
-    height: 40px;
+    height: 60px;
+    margin-left: 15px;
 }
 
 #center_elements span,
@@ -116,6 +120,7 @@ footer{
         margin: 0 auto;
         height: 400PX;
         width: 700PX;
+        margin-top: 50px;
     }
     .audio-container {
         position: fixed;
@@ -155,3 +160,35 @@ footer{
       #play-button:hover {
         background-color: #ccc;
       }
+      
+.fb img {
+    transition: transform 0.3s ease;
+  }
+  
+  .fb:hover img {
+    transform: scale(1.2); 
+  }
+  .insta img {
+    transition: transform 0.3s ease;
+  }
+  
+  .insta:hover img {
+    transform: scale(1.2);
+    
+  }
+  .ytb img {
+    transition: transform 0.3s ease;
+  }
+  
+  .ytb:hover img {
+    transform: scale(1.2);
+    
+  }
+  .twt img {
+    transition: transform 0.3s ease;
+  }
+  
+  .twt:hover img {
+    transform: scale(1.2);
+    
+  }

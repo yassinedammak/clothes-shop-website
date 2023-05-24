@@ -1,19 +1,11 @@
 <?php
-
+$message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $n = $_POST['name'];
-    $em = $_POST['email'];
-    $pass = $_POST['password'];
-    $confirm_pass = $_POST['confirm_password'];
-    $gend = $_POST['gender'];
-    $ag = $_POST['age'];
-    $adr = $_POST['adresse'];
-    if (empty($n)|| empty($ag) || empty($em) || empty($pass) || empty($confirm_pass) || empty($gend)) {
-        $response = array('success' => false, 'message' => 'Please fill in all the required fields.');
-        echo json_encode($response);
-    } elseif ($pass !== $confirm_pass) {
-        $response = array('success' => false, 'message' => 'Password and confirm password do not match.');
-        echo json_encode($response);
+    
+    if (empty($_POST['name'])|| empty($_POST['email']) || empty($_POST['password']) || empty($_POST['confirm_password']) || empty($_POST['gender']) || empty($_POST['adresse'])) {
+        $message = 'Please fill in all the required fields.';
+    } elseif ($_POST['password'] !== $_POST['confirm_password']) {
+        $message = 'Password and confirm password do not match.';
     } else {
 
         try {
@@ -22,7 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }
-        // After successful insertion in the database
+        $n = $_POST['name'];
+        $em = $_POST['email'];
+        $pass = $_POST['password'];
+        $confirm_pass = $_POST['confirm_password'];
+        $gend = $_POST['gender'];
+        $ag = $_POST['age'];
+        $adr = $_POST['adresse'];
+
         $requete = $db->prepare('INSERT INTO Clients(nom,email,passwd,gender,age,adresse) VALUES(:nome, :mail, :pas, :g, :agg, :adr)');
         $requete->execute(array('nome' => $n, 'mail' => $em, 'pas' => $pass, 'g' => $gend, 'agg' => $ag, 'adr' => $adr));
         $message = "Ajout de la nouvelle entrée est terminée avec succès !";
@@ -38,10 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
 	<title>Sign-Up</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="signup.js"></script>
+    <link rel="icon" href="logooo.png" >
+	
 </head>
 <body>
-	<nav class="navbar">
+<nav class="navbar">
         <div id="logo_container">
             <img src="download.png" alt="logo">
         </div>
@@ -55,9 +55,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <span id="Sign_up"> <a href=".\signup.php">Sign Up</a></span>
         </div>
     </nav>
+    <?php if (!empty($message)) { ?>
+        <div class="message-container">
+    <p style="color: red; font-size: 25px; text-align: center;"><?php echo $message; ?></p>
+</div>
+
+    <?php } ?>
 	<div class="login-page">
 		<div class="form">
-			<form class="register-form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>"> 
+			<form class="register-form" method="POST" action=""> 
 				<h2>Sign Up</h2>
 				<input type="text" name="name" placeholder="Name"  required/> 
 				<input type="email" name="email" placeholder="Email"/> 
@@ -77,32 +83,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</form>
         </div>    
     </div>
-    <?php if (isset($message)) { ?>
-        <script>
-            alert("<?php echo $message; ?>");
-        </script>
-    <?php } ?>
-	<footer>
-        <div>
+    <footer>
+        <div >
             <div class="row">
-                <a href="https://www.facebook.com" target="_blank"><img src="facebook .png" alt="Facebook"></a>
-                <a href="https://www.instagram.com" target="_blank"><img src="instagram (3).png" alt="Instagram"></a>
-                <a href="https://www.youtube.com" target="_blank"><img src="youtub.png" alt="YouTube"></a>
-                <a href="https://www.twitter.com" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+                <a class="fb" href="https://www.facebook.com" target="_blank"><img  src="facebook.png" alt="Facebook"></a>
+                <a class="insta" href="https://www.instagram.com" target="_blank"><img  src="instagram.png" alt="Instagram"></a>
+                <a class="ytb" href="https://www.youtube.com" target="_blank"><img  src="youtube.png" alt="YouTube"></a>
+                <a class="twt" href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
             </div>
         </div>
   
+    
+        
         <div class="row">
-            <ul>
-                <li><a href="./contact.html">Contact us</a></li>
-                <li><a href="./PrivacyPolicy.html">Privacy Policy</a></li>
-                <li><a href="./termsandconditions.html">Terms & Conditions</a></li>
-            </ul>
+        <ul>
+        <li><a href="./contact.html">Contact us</a></li>
+        <li><a href="./PrivacyPolicy.html">Privacy Policy</a></li>
+        <li><a href="./termsandconditions.html">Terms & Conditions</a></li>
+        </ul>
         </div>
         
         <div class="row">
-            &copy; 2023 - All rights reserved
+        Copyright © 2023 - All rights reserved
         </div>
+        
     </footer>
 </body>
 </html>
