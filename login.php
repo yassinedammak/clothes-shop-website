@@ -11,7 +11,7 @@
             <img src="download.png" alt="logo">
         </div>
         <div id="center_elements">
-            <span id="Acceuil"><a href="./Acceuil.html">Home</a></span>
+            <span id="Acceuil"><a href="./Acceuil.php">Home</a></span>
             <span id="Contact"><a href="./contact.html">Contact</a></span>
             <span id="About"><a href="about.html">About Us</a></span>
         </div>
