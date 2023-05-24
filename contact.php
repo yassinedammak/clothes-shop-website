@@ -1,18 +1,22 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $message = $_POST["message"];
-  $problem_type = $_POST["problem-type"];
-  
-  $to = "Trendytech@gmail.com";
-  $subject = "New contact form submission";
-  $body = "Name: $name\nEmail: $email\nMessage: $message\nProblem Type: $problem_type";
-  
-  if (mail($to, $subject, $body)) {
-    echo "success";
-  } else {
-    echo "error";
-  }
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+$to = "yassin.dammak474@gmail.com";
+$subject = "This is the subject line";
+
+
+$txt = "Name = " . $name . "\r\nEmail = " . $email . "\r\nMessage = " . $message;
+$headers = "From: yassin.dammak473@gmail.com\r\n";
+
+if (mail($to, $subject, $txt,$headers)) {
+    echo "<h1>Mail sent successfully</h1>";
+    header("Location: contact.html");
+} else {
+    echo "<h1>Failed to send the email</h1>";
+}}
+
 ?>
+

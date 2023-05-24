@@ -9,15 +9,20 @@ body {
 }
 /* Navbar styles */
 .navbar {
+    position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    padding: 10px;
+    padding: 3px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 #logo_container img {
-    height: 40px;
+    height: 60px;
+    margin-left: 15px;
 }
 
 #center_elements span,
@@ -47,7 +52,7 @@ body {
 .form {
 	position: relative;
 	z-index: 1;
-	background: #FFFFFF;
+	background: rgb(247,232,121);
 	max-width: 360px;
 	margin: 0 auto 100px;
 	padding: 45px;
@@ -58,7 +63,7 @@ body {
 .form input, .form button, .form select {
 	font-family: "Roboto", sans-serif;
 	outline: 0;
-	background: #f2f2f2;
+	background: #ffffff;
 	border: 0;
 	margin: 0;
 	padding: 15px;
@@ -71,14 +76,24 @@ body {
 
 .form button {
 	text-transform: uppercase;
-	background: #4CAF50;
-	color: #FFF;
+	background: #cc8844;
+	color: #ffffff;
 	border-radius: 5px;
 	padding: 15px;
 	margin-top: 15px;
 	border: none;
 	cursor: pointer;
 }
+
+
+.buttonn {
+  transition: transform 0.3s ease;
+}
+
+.buttonn:hover {
+  transform: scale(1.1);
+}
+
 
 .form h2 {
 	font-family: 'Montserrat', sans-serif;
@@ -96,8 +111,8 @@ body {
 }
 
 .form p a {
-	color: #4CAF50;
-	text-decoration: none;
+	color: #cc8844;
+	
 }
 
 .form select {
@@ -153,3 +168,46 @@ footer{
       }
       
     
+
+
+
+
+      .fb img {
+        transition: transform 0.3s ease;
+      }
+      
+      .fb:hover img {
+        transform: scale(1.2); 
+      }
+      .insta img {
+        transition: transform 0.3s ease;
+      }
+      
+      .insta:hover img {
+        transform: scale(1.2);
+        
+      }
+      .ytb img {
+        transition: transform 0.3s ease;
+      }
+      
+      .ytb:hover img {
+        transform: scale(1.2);
+        
+      }
+      .twt img {
+        transition: transform 0.3s ease;
+      }
+      
+      .twt:hover img {
+        transform: scale(1.2);
+        
+      }
+
+
+
+      .message-container{
+        margin-top: 160PX;
+      }
+
+      

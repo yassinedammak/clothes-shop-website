@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="chemise.css">
     <link rel="icon" href="logooo.png" >
+    <title>Chemise</title>
 </head>
 <body>
     <nav class="navbar">
@@ -14,30 +14,28 @@
             <img src="download.png" alt="logo">
         </div>
         <div id="center_elements">
-            <a href="./Acceuil.php">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About Us</a>
+            <span id="Acceuil"><a href="./Acceuil.php">Home</a></span>
+            <span id="Contact"><a href="./contact.html">Contact</a></span>
+            <span id="About"><a href="about.html">About Us</a></span>
         </div>
         <div class="right_elements">
-            <span id="Login"><a href=".\login.php">Login</a></span>
-<span id="Sign_up"> <a href=".\signup.php">Sign Up</a></span>
+            <span id="Login"><a href=".\login.html">Login</a></span>
+<span id="Sign_up"> <a href=".\signup.html">Sign Up</a></span>
 </div>
     </nav>
-    <div class="contact-container">
-        <form class="contact-form" action="contact.php" method="POST">
-            <h2>Contact Us</h2>
-            <label for="n">Name:</label>
-            <input type="text" name="name" id="name" required>
-            <br>
-            <label for="e">Email:</label>
-            <input type="email" name="email" id="email" required>
-            <br>
-            <label for="m">Message:</label>
-            <textarea name="message" id="message" rows="4" required></textarea>
-            <button type="submit">envoyer</button> 
-            <input type="reset" value="reset">
-        </form>
+
+    <div class="product-container">
+        <div class="product-image">
+            <img src="chemise1.png" alt="Product">
+        </div>
+        <div class="product-info">
+            <h1 class="name">Chemise</h1>
+            <p class="description">Découvrez notre chemise de haute qualité, le choix parfait pour les hommes à la recherche d'un vêtement élégant et durable. Cette chemise est confectionnée avec un soin minutieux et des matériaux de première qualité, offrant ainsi une excellente finition et une sensation de confort supérieur. Avec sa coupe impeccable et ses lignes sophistiquées, cette chemise flatte la silhouette masculine de manière élégante, ajoutant une touche de classe à toute tenue. De plus, sa palette de couleurs intemporelles vous permet de créer des combinaisons polyvalentes, adaptées à toutes les occasions, qu'elles soient formelles ou décontractées.</p>
+            <div class="price">$120</div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
     </div>
+
     <footer>
         <div >
             <div class="row">
@@ -63,6 +61,5 @@
         </div>
         
     </footer>
-  
 </body>
 </html>
