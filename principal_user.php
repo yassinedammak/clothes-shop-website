@@ -2,62 +2,55 @@
 
 session_start();
 
-
+// Database connection details
 $host = "localhost";
 $username = "root";
 $password = "";
 $database = "webproject";
 
-
+// Establish a connection to the database
 $conn = mysqli_connect($host, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// Fetch products from the database
 $query = "SELECT * FROM products";
+$userID = $_SESSION['userid'];
+$query2 = "SELECT id_prod,Quantity FROM cart WHERE userId = '$userID'";
 $result = mysqli_query($conn, $query);
+$result2 = mysqli_query($conn, $query2);
+while ($row = mysqli_fetch_assoc($result2)) {
 
-if(isset($_POST['add'])){
- 
-  if (isset($_SESSION['cart'])){
+$product_qnts[] = $row['Quantity'];
+}
+$count = array_sum($product_qnts);;
 
-    $item_array_id = array_column($_SESSION['cart'],'productid');
+if (isset($_POST['add'])) {
+    $productID = $_POST['productid'];
+    $userID = $_SESSION['userid']; 
+    $quantity = 1; 
 
-    
-    
-    if(in_array($_POST['productid'], $item_array_id)) {
-
-      echo "<script>alert('Product is already added to cart..!') </script>";
-      echo "<script>window.location='principal_user.php</script>";
-    }else{
-      $count = count($_SESSION['cart']);
-      $item_array=array(
-        'productid' => $_POST['productid'],
-      );
-      $_SESSION['cart'][$count] = $item_array;
-     
+    // Insert the data into the cart table
+    $insertQuery = "INSERT INTO cart (userId, id_prod, Quantity) VALUES ('$userID', '$productID', '$quantity')";
+    $insertResult = mysqli_query($conn, $insertQuery);
+    if ($insertResult) {
+        echo "<script>alert('Product added to cart successfully!')</script>";
+        echo "<script>window.location='principal_user.php'</script>";
+    } else {
+        echo "Error: " . mysqli_error($conn);
     }
-
-  }else{
-     
-    $item_array=array(
-      'productid' => $_POST['productid'],
-    );
-
-    
-    $_SESSION['cart'][0] = $item_array;
-    print_r($_SESSION['cart']);
-  }
 }
 
 ?>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="principal_user.css" media="screen"  />
-    <link rel="icon" href="logooo.png" >
     <title>User_Home</title>
 </head>
 <body>
@@ -66,7 +59,7 @@ if(isset($_POST['add'])){
             <img src="download.png" alt="logo">
         </div>
         <div id="center_elements">
-            <span id="Acceuil"><a href="./Acceuil.php">Home</a></span>
+            <span id="Acceuil"><a href="./principal_user.php">Home</a></span>
             <span id="Contact"><a href="./contact.html">Contact</a></span>
             <span id="About"><a href="about.html">About Us</a></span>
         </div>
@@ -79,7 +72,6 @@ if(isset($_POST['add'])){
 
 
                 if(isset($_SESSION['cart'])){
-                  $count = count($_SESSION['cart']);
                   echo "<b id=\"cart_count\">$count</b>";
                 }else{
 
@@ -97,7 +89,7 @@ if(isset($_POST['add'])){
         </div>
     </nav>
     <div id="content">
-
+ <!-- tester si l'utilisateur est connecté -->
  <?php
  
  if(isset($_GET['deconnexion']))
@@ -147,9 +139,8 @@ if(isset($_POST['add'])){
       
       <div class="Products-container">
     <div class="OnSale_products">
-    
     <?php
-          
+            // Loop through each product and display as a component
             while ($row = mysqli_fetch_assoc($result)) {
                 $id = $row['id'];
                 $name = $row['name'];
@@ -174,13 +165,13 @@ if(isset($_POST['add'])){
             ?>
     </div>
 </div>
-<footer>
+    <footer>
         <div >
             <div class="row">
-                <a class="fb" href="https://www.facebook.com" target="_blank"><img  src="facebook.png" alt="Facebook"></a>
-                <a class="insta" href="https://www.instagram.com" target="_blank"><img  src="instagram.png" alt="Instagram"></a>
-                <a class="ytb" href="https://www.youtube.com" target="_blank"><img  src="youtube.png" alt="YouTube"></a>
-                <a class="twt" href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
+                <a href="https://www.facebook.com" target="_blank"><img  src="facebook .png" alt="Facebook"></a>
+                <a href="https://www.instagram.com" target="_blank"><img  src="instagram (3).png" alt="Instagram"></a>
+                <a href="https://www.youtube.com" target="_blank"><img  src="youtub.png" alt="YouTube"></a>
+                <a href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
             </div>
         </div>
   

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2023 at 10:31 PM
+-- Generation Time: May 24, 2023 at 11:41 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -46,9 +46,10 @@ INSERT INTO `admins` (`username`, `password`) VALUES
 --
 
 CREATE TABLE `cart` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `price` decimal(10,2) NOT NULL
+  `id_cart` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `id_prod` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -74,9 +75,9 @@ CREATE TABLE `clients` (
 
 INSERT INTO `clients` (`id_client`, `nom`, `email`, `passwd`, `gender`, `age`, `gift_points`, `adresse`) VALUES
 (2, 'Yassin', 'dammakyessin473@yahoo.com', '123', 'male', '21', 0, 'Mannouba immeuble zitouna3'),
-(3, 'Yassine Dammak', 'souissizeineb22@gmail.com', 'a', 'male', '12', 0, 'Mannouba immeuble zitouna3'),
-(4, 'ali', 'ali@gmail.com', 'a', 'female', '44', 0, 'zeze'),
-(5, 'chelly', 'chelly@gmail.com', 'azer', 'male', '21', 0, 'sfax');
+(4, 'ali', 'ali@gmail.com', 'a', 'male', '44', 0, 'zeze'),
+(5, 'chelly', 'chelly@gmail.com', 'azer', 'male', '21', 0, 'sfax'),
+(6, 'chely', 'chelly@gmail.com', 'A', 'male', '21', 0, 'sfax');
 
 -- --------------------------------------------------------
 
@@ -115,8 +116,6 @@ INSERT INTO `products` (`id`, `name`, `image`, `price`) VALUES
 (4, 'Black Sneakers', 'jkk.jpg', 220.00),
 (5, 'White Sneakers', 'whitesneakers-2048px-4180.webp', 100.00),
 (6, 'Black Tan Shoes', 'STEVEMADDEN_SHOES_POSESSION_BLACK-TAN_SIDE_grande.webp', 150.00),
-(7, 'robe', 'image1.jpg', 200.00),
-(8, 'robe', 'image1.jpg', 200.00),
 (9, 'robe', 'image1.jpg', 200.00);
 
 --
@@ -133,7 +132,7 @@ ALTER TABLE `admins`
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_cart`);
 
 --
 -- Indexes for table `clients`
@@ -162,13 +161,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ordre`
@@ -180,7 +179,7 @@ ALTER TABLE `ordre`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables

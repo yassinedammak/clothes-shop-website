@@ -3,7 +3,6 @@
 <head>
 	<title>Clothes Store Login/Sign-Up</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" href="logooo.png" >
 	
 </head>
 <body>
@@ -29,7 +28,7 @@
                 <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
 				<button type="submit" id='submit' value='LOGIN'>Log In</button> 
-				<p class="message">Not registered? <a href=".\signup.php">Create an account</a></p>
+				<p class="message">Not registered? <a href=".\signup.html">Create an account</a></p>
                 <?php
                 if(isset($_GET['erreur'])){
                 $err = $_GET['erreur'];
@@ -40,28 +39,26 @@
 			</form>
 		</div>
 	</div>
-    <footer>
+	<footer>
         <div >
             <div class="row">
-                <a class="fb" href="https://www.facebook.com" target="_blank"><img  src="facebook.png" alt="Facebook"></a>
-                <a class="insta" href="https://www.instagram.com" target="_blank"><img  src="instagram.png" alt="Instagram"></a>
-                <a class="ytb" href="https://www.youtube.com" target="_blank"><img  src="youtube.png" alt="YouTube"></a>
-                <a class="twt" href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
+                <a href="https://www.facebook.com" target="_blank"><img  src="facebook .png" alt="Facebook"></a>
+                <a href="https://www.instagram.com" target="_blank"><img  src="instagram (3).png" alt="Instagram"></a>
+                <a href="https://www.youtube.com" target="_blank"><img  src="youtub.png" alt="YouTube"></a>
+                <a href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
             </div>
         </div>
   
-    
-        
         <div class="row">
-        <ul>
-        <li><a href="./contact.html">Contact us</a></li>
-        <li><a href="./PrivacyPolicy.html">Privacy Policy</a></li>
-        <li><a href="./termsandconditions.html">Terms & Conditions</a></li>
-        </ul>
+            <ul>
+                <li><a href="./contact.html">Contact us</a></li>
+                <li><a href="./PrivacyPolicy.html">Privacy Policy</a></li>
+                <li><a href="./termsandconditions.html">Terms & Conditions</a></li>
+            </ul>
         </div>
         
         <div class="row">
-        Copyright © 2023 - All rights reserved
+            &copy; 2023 - All rights reserved
         </div>
         
     </footer>
