@@ -13,29 +13,28 @@ $conn = mysqli_connect($host, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
 // Retrieve the product IDs associated with the user from the cart table
-$user = $_SESSION['username'];
 $userID = $_SESSION['userid'];
 $query = "SELECT * FROM cart WHERE userId = '$userID'";
 $result = mysqli_query($conn, $query);
-// Create an array to store the product IDs
+
+// Create arrays to store the product IDs and quantities
 $product_ids = array();
+$product_qnts = array(); // Initialize an empty array
+
 while ($row = mysqli_fetch_assoc($result)) {
     $product_ids[] = $row['id_prod'];
     $product_qnts[] = $row['Quantity'];
 }
-$count=array_sum($product_qnts);
+
+$count = array_sum($product_qnts);
 $_SESSION['count'] = $count;
-
-
-
-
 
 // Fetch the products from the product table using the product IDs
 $products_query = "SELECT * FROM products WHERE id IN (" . implode(',', $product_ids) . ")";
-if (!empty($product_ids)){
-$products_result = mysqli_query($conn, $products_query);}
+if (!empty($product_ids)) {
+    $products_result = mysqli_query($conn, $products_query);
+}
 
 // Check if the "remove" button is clicked
 if (isset($_GET['remove'])) {
@@ -227,10 +226,10 @@ $(document).ready(function() {
 <footer>
         <div >
             <div class="row">
-                <a href="https://www.facebook.com" target="_blank"><img  src="facebook .png" alt="Facebook"></a>
-                <a href="https://www.instagram.com" target="_blank"><img  src="instagram (3).png" alt="Instagram"></a>
-                <a href="https://www.youtube.com" target="_blank"><img  src="youtub.png" alt="YouTube"></a>
-                <a href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
+                <a class="fb" href="https://www.facebook.com" target="_blank"><img  src="facebook.png" alt="Facebook"></a>
+                <a class="insta" href="https://www.instagram.com" target="_blank"><img  src="instagram.png" alt="Instagram"></a>
+                <a class="ytb" href="https://www.youtube.com" target="_blank"><img  src="youtube.png" alt="YouTube"></a>
+                <a class="twt" href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
             </div>
         </div>
   
@@ -249,6 +248,7 @@ $(document).ready(function() {
         </div>
         
     </footer>
+  
 
 </body>
 </html>

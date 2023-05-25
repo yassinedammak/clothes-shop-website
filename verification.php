@@ -24,7 +24,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $query = "SELECT id_client FROM clients WHERE nom='$username' AND passwd='$password'";
     $result = mysqli_query($conn, $query);
 
-    if (mysqli_num_rows($result) == 1) {
+    if (mysqli_num_rows($result) >= 1) {
         // Login successful, retrieve the user ID and store it in the session
         $row = mysqli_fetch_assoc($result);
         $_SESSION['userid'] = $row['id_client'];

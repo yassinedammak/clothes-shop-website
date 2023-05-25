@@ -20,12 +20,17 @@ $userID = $_SESSION['userid'];
 $query2 = "SELECT id_prod,Quantity FROM cart WHERE userId = '$userID'";
 $result = mysqli_query($conn, $query);
 $result2 = mysqli_query($conn, $query2);
-while ($row = mysqli_fetch_assoc($result2)) {
+$count = 0; // Initialize $count to 0
 
-$product_qnts[] = $row['Quantity'];
+if (isset($_SESSION['cart'])) {
+    $product_qnts = []; // Initialize an empty array
+
+    while ($row = mysqli_fetch_assoc($result2)) {
+        $product_qnts[] = $row['Quantity'];
+    }
+
+    $count = array_sum($product_qnts);
 }
-$count = array_sum($product_qnts);;
-
 if (isset($_POST['add'])) {
     $productID = $_POST['productid'];
     $userID = $_SESSION['userid']; 
@@ -165,13 +170,13 @@ if (isset($_POST['add'])) {
             ?>
     </div>
 </div>
-    <footer>
+<footer>
         <div >
             <div class="row">
-                <a href="https://www.facebook.com" target="_blank"><img  src="facebook .png" alt="Facebook"></a>
-                <a href="https://www.instagram.com" target="_blank"><img  src="instagram (3).png" alt="Instagram"></a>
-                <a href="https://www.youtube.com" target="_blank"><img  src="youtub.png" alt="YouTube"></a>
-                <a href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
+                <a class="fb" href="https://www.facebook.com" target="_blank"><img  src="facebook.png" alt="Facebook"></a>
+                <a class="insta" href="https://www.instagram.com" target="_blank"><img  src="instagram.png" alt="Instagram"></a>
+                <a class="ytb" href="https://www.youtube.com" target="_blank"><img  src="youtube.png" alt="YouTube"></a>
+                <a class="twt" href="https://www.twitter.com" target="_blank"><img  src="twitter.png" alt="Twitter"></a>
             </div>
         </div>
   
@@ -190,6 +195,7 @@ if (isset($_POST['add'])) {
         </div>
         
     </footer>
+  
 
 <script src="Acceuil.js"></script>
 
