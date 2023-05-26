@@ -3,7 +3,7 @@ session_start();
 
 
 if (!isset($_SESSION['username'])) {
-    header('Location: index.php');
+    header('Location: loginadmin.php');
     die();
 }
 
@@ -33,12 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
     $stmt->bindParam(':price', $product_price);
     $stmt->bindParam(':image', $product_image);
     $stmt->execute();
-
     
-    $target_dir = 'uploads/'; 
-    $target_file = $target_dir . basename($_FILES['product_image']['name']);
-    move_uploaded_file($_FILES['product_image']['tmp_name'], $target_file);
-
     echo 'Product added successfully!';
 }
 

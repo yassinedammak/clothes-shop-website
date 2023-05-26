@@ -2,28 +2,28 @@
 
 session_start();
 
-// Database connection details
+
 $host = "localhost";
 $username = "root";
 $password = "";
 $database = "webproject";
 
-// Establish a connection to the database
+
 $conn = mysqli_connect($host, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Fetch products from the database
+
 $query = "SELECT * FROM products";
 $userID = $_SESSION['userid'];
 $query2 = "SELECT id_prod,Quantity FROM cart WHERE userId = '$userID'";
 $result = mysqli_query($conn, $query);
 $result2 = mysqli_query($conn, $query2);
-$count = 0; // Initialize $count to 0
+$count = 0; 
 
 if (isset($_SESSION['cart'])) {
-    $product_qnts = []; // Initialize an empty array
+    $product_qnts = []; 
 
     while ($row = mysqli_fetch_assoc($result2)) {
         $product_qnts[] = $row['Quantity'];
@@ -36,7 +36,7 @@ if (isset($_POST['add'])) {
     $userID = $_SESSION['userid']; 
     $quantity = 1; 
 
-    // Insert the data into the cart table
+    
     $insertQuery = "INSERT INTO cart (userId, id_prod, Quantity) VALUES ('$userID', '$productID', '$quantity')";
     $insertResult = mysqli_query($conn, $insertQuery);
     if ($insertResult) {
@@ -65,11 +65,10 @@ if (isset($_POST['add'])) {
         </div>
         <div id="center_elements">
             <span id="Acceuil"><a href="./principal_user.php">Home</a></span>
-            <span id="Contact"><a href="./contact.html">Contact</a></span>
-            <span id="About"><a href="about.html">About Us</a></span>
+            <span id="Contact"><a href="./contactuser.php">Contact</a></span>
+            <span id="About"><a href="./principal_user.php">About Us</a></span>
         </div>
-        <div class="right_elements">
-          
+        
           <span id="Cart">
             <a href="./cart.php">
               <img src="./cart-icon.webp" alt="Cart">
@@ -81,20 +80,17 @@ if (isset($_POST['add'])) {
                 }else{
 
                   echo "<b id=\"cart_count\">0</b>";
-
                 }
-
-
-
               ?>
             </a>
           </span>
-          <span id="Login"><a href=".\Acceuil.php">Logout</a></span>
+
+          <span id="Logout"><a href=".\Acceuil.php">Logout</a></span>
             
         </div>
     </nav>
     <div id="content">
- <!-- tester si l'utilisateur est connecté -->
+ 
  <?php
  
  if(isset($_GET['deconnexion']))
@@ -145,7 +141,7 @@ if (isset($_POST['add'])) {
       <div class="Products-container">
     <div class="OnSale_products">
     <?php
-            // Loop through each product and display as a component
+         
             while ($row = mysqli_fetch_assoc($result)) {
                 $id = $row['id'];
                 $name = $row['name'];
@@ -159,15 +155,12 @@ if (isset($_POST['add'])) {
                         <div class="name"><?php echo $name; ?></div>
                         <div class="price"><?php echo "$" . $price; ?></div>
                         <button type="submit" class="add_to_cart" name="add"  data-price="<?php echo $price; ?>" >Add to Cart</button>
-
                         <input type="hidden" name="productid" value="<?php echo $id; ?>">
                       </div>
                 </div>
               </form>
-
-                <?php
-            }
-            ?>
+                <?php }
+                ?>
     </div>
 </div>
 <footer>

@@ -1,3 +1,27 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+$to = "yassin.dammak474@gmail.com";
+$subject = "contact message to the clothes-shop";
+
+
+$txt = "Name = " . $name . "\r\nEmail = " . $email . "\r\nMessage = " . $message;
+$headers = "From: yassin.dammak473@gmail.com\r\n";
+
+if (mail($to, $subject, $txt,$headers)) {
+    $msg='email sent sucessfully';
+    header("Location: contactuser.php");
+} else {
+    $msg='Failed to send the email';
+}}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +38,21 @@
             <img src="download.png" alt="logo">
         </div>
         <div id="center_elements">
-            <a href="./Acceuil.php">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About Us</a>
+            <a href="./principal_user.php">Home</a>
+            <a href="./contactuser.php">Contact</a>
+            <a href="./principal_user.php">About Us</a>
         </div>
-        <div class="right_elements">
-            <span id="Login"><a href=".\login.php">Login</a></span>
-<span id="Sign_up"> <a href=".\signup.php">Sign Up</a></span>
-</div>
+       
     </nav>
+    <?php if (!empty($msg)) { ?>
+        <div class="message-container">
+    <p style="color: red; font-size: 25px; text-align: center;"><?php echo $msg; ?></p>
+</div>
+
+    <?php } ?>
+
     <div class="contact-container">
-        <form class="contact-form" action="contact.php" method="POST">
+        <form class="contact-form" action="" method="POST">
             <h2>Contact Us</h2>
             <label for="n">Name:</label>
             <input type="text" name="name" id="name" required>

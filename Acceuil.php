@@ -32,7 +32,7 @@ $result = mysqli_query($conn, $query);
         </div>
         <div id="center_elements">
             <span id="Acceuil"><a href="#top">Home</a></span>
-            <span id="Contact"><a href="./contact.html">Contact</a></span>
+            <span id="Contact"><a href="./contactt.php">Contact</a></span>
             <span id="About"><a href="about.html">About Us</a></span>
         </div>
         <div class="right_elements">
